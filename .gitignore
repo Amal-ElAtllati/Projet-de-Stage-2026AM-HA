@@ -1,0 +1,6 @@
+backendvenv/
+__pycache__/
+*.pyc
+newsletters.db
+.env
+*.db
