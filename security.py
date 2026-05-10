@@ -1,12 +1,9 @@
 from fastapi import Security, HTTPException, status
 from fastapi.security import APIKeyHeader
 from passlib.context import CryptContext
-import os
-from dotenv import load_dotenv
-load_dotenv()
 
 # ── Clé API attendue ─────────────────────────────────────────────
-API_KEY = "api_key"  # Change cette valeur !
+API_KEY = API_KEY = os.getenv("API_KEY")  # Change cette valeur !
 
 # ── Définir où chercher la clé (dans le header) ──────────────────
 api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False)

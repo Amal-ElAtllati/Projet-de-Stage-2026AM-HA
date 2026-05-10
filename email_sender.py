@@ -1,12 +1,9 @@
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-import os
-from dotenv import load_dotenv
-load_dotenv()
 
-GMAIL = "gmail"        # ton vrai email Gmail
-PASSWORD = "gmail_password"     # mot de passe d'application 16 caractères
+GMAIL = os.getenv("GMAIL")        # ton vrai email Gmail
+PASSWORD = os.getenv("GMAIL_PASSWORD")     # mot de passe d'application 16 caractères
 
 def send_newsletter_email(to_email: str, subject: str, html_content: str) -> dict:
     try:
